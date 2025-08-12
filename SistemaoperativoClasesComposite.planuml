@@ -1,0 +1,64 @@
+@startuml
+interface ElementoSistema {
+    +getNombre(): String
+    +getTamaño(): int
+    +imprimir(indent: String): void
+    +borrar(): void
+    +renombrar(nuevoNombre: String): void
+    +mover(nuevaUbicacion: Carpeta): void
+@startuml
+' Interfaz común para todos los elementos del sistema de archivos
+interface ElementoSistema {
+    +getNombre(): String
+    +getTamaño(): int
+    +imprimir(indent: String): void
+    +borrar(): void
+    +renombrar(nuevoNombre: String): void
+    +mover(nuevaUbicacion: Carpeta): void
+}
+
+' Clase concreta para archivos
+class Archivo implements ElementoSistema {
+    -nombre: String
+    -tamaño: int
+    +getNombre(): String
+    +getTamaño(): int
+    +imprimir(indent: String): void
+    +borrar(): void
+    +renombrar(nuevoNombre: String): void
+    +mover(nuevaUbicacion: Carpeta): void
+}
+
+' Clase concreta para carpetas, que pueden contener otros elementos
+class Carpeta implements ElementoSistema {
+    -nombre: String
+    -elementos: List<ElementoSistema>
+    +agregarElemento(e: ElementoSistema): void
+    +getNombre(): String
+    +getTamaño(): int
+    +imprimir(indent: String): void
+    +borrar(): void
+    +renombrar(nuevoNombre: String): void
+    +mover(nuevaUbicacion: Carpeta): void
+}
+
+' Clase adicional para accesos directos o enlaces simbólicos
+class AccesoDirecto implements ElementoSistema {
+    -nombre: String
+    -referencia: ElementoSistema
+    +getNombre(): String
+    +getTamaño(): int
+    +imprimir(indent: String): void
+    +borrar(): void
+    +renombrar(nuevoNombre: String): void
+    +mover(nuevaUbicacion: Carpeta): void
+}
+
+
+Carpeta --> "0..*" ElementoSistema : contiene
+AccesoDirecto --> ElementoSistema : referencia
+@enduml
+
+ElementoSistema <|.. Archivo
+ElementoSistema <|.. Carpeta
+ElementoSistema <|.. AccesoDirecto

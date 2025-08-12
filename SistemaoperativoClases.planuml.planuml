@@ -1,0 +1,24 @@
+@startuml
+
+class Archivo{
+    -nombre: String
+    -tamaño: int
+    +getNombre(): String
+    +getTamaño(): int
+   
+}
+
+class Carpeta {
+    -nombre: String
+    -archivos: List<Archivo>
+    -subCarpeta: List<Carpeta>
+    +getNombre(): String
+    +getTamaño(): int
+    +getArchivos(): Archivo
+    +getSubCarpetas(): Carpeta
+}
+
+
+Carpeta --> "0..*" Archivo : contiene
+Carpeta --> "0..*" Carpeta : contiene
+@enduml
