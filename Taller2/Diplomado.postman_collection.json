@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "02fd31c6-4747-4351-a749-cb062efd900b",
+		"_postman_id": "c569acc7-48ab-4eab-bcf5-73c9bd6e2e9c",
 		"name": "Diplomado",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "46393254",
-		"_collection_link": "https://ivangualtero.postman.co/workspace/c503f08d-ab7e-4c38-85a2-a9a900b1fa35/collection/46393254-02fd31c6-4747-4351-a749-cb062efd900b?action=share&source=collection_link&creator=46393254"
+		"_exporter_id": "47658773",
+		"_collection_link": "https://idgualtero-4344691.postman.co/workspace/Ivan-Gualtero's-Workspace~05af85b3-5add-4124-80c1-01eb95821402/collection/47658773-c569acc7-48ab-4eab-bcf5-73c9bd6e2e9c?action=share&source=collection_link&creator=47658773"
 	},
 	"item": [
 		{
@@ -59,7 +59,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -94,15 +94,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/publicar",
+					"raw": "http://localhost:8081/api/store/order",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
-						"publicar"
+						"store",
+						"order"
 					]
 				}
 			},
