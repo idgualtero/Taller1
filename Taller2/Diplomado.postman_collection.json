@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "02fd31c6-4747-4351-a749-cb062efd900b",
+		"name": "Diplomado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46393254",
+		"_collection_link": "https://ivangualtero.postman.co/workspace/c503f08d-ab7e-4c38-85a2-a9a900b1fa35/collection/46393254-02fd31c6-4747-4351-a749-cb062efd900b?action=share&source=collection_link&creator=46393254"
+	},
+	"item": [
+		{
+			"name": "Mocck",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"document\": \"123456\", \"amount\": 1500}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_basic_api}}/validate-payment",
+							"host": [
+								"{{url_basic_api}}"
+							],
+							"path": [
+								"validate-payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"document\": \"123456\", \"amount\": 1500}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_basic_api}}/validate-payment",
+									"host": [
+										"{{url_basic_api}}"
+									],
+									"path": [
+										"validate-payment"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\"status\":\"success\",\"message\":\"Pago validado\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Carrito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"id\": 10,\n  \"productName\": \"Manzanas\",\n  \"totalAmtt\": 10000,\n  \"paymentMethod\": \"PSE\",\n  \"quantity\": 7,\n  \"shipDate\": \"2025-08-14T20:49:56.445Z\",\n  \"complete\": true\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/publicar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publicar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/validate-payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"document\": \"123456\", \"amount\": 1500}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_basic_api}}/validate-payment",
+					"host": [
+						"{{url_basic_api}}"
+					],
+					"path": [
+						"validate-payment"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:8000/validate-payment\" \\\n\r\n-H \"Content-Type: application/json\" \\\n\r\n-d '{\"document\": \"123456\", \"amount\": 1500}'\n\r\n{\"status\":\"success\",\"message\":\"Pago validado\"}%    \n "
+			},
+			"response": []
+		}
+	]
+}
